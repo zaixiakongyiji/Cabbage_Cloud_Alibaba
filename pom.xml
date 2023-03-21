@@ -27,7 +27,7 @@
         <dubbo.version>3.2.0-beta.4</dubbo.version>
         <gateway.version>4.0.0</gateway.version>
         <junit.version>3.8.1</junit.version>
-        <knife4j.version>2.0.4</knife4j.version>
+        <knife4j.version>4.0.0</knife4j.version>
         <mp.version>3.5.3.1</mp.version>
         <druid.version>1.2.15</druid.version>
         <mysql.version>8.0.32</mysql.version>
@@ -37,6 +37,7 @@
         <jjwt.version>0.9.1</jjwt.version>
         <security.version>2.2.5.RELEASE</security.version>
         <druid.version>1.2.16</druid.version>
+        <zookeeper.version>3.6.0</zookeeper.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -73,9 +74,10 @@
 
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -161,7 +163,13 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-gateway</artifactId>
-              <version>${spring.cloud.version}</version>
+                <version>${spring.cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -170,9 +178,16 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version> 3.0-alpha-1</version>
+            <version>3.0-alpha-1</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+        </dependency>
+
+
     </dependencies>
 
 

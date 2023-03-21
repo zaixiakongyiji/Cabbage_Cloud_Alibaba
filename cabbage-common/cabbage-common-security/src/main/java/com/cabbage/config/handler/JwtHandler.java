@@ -1,4 +1,4 @@
-package com.cabbage.config;
+package com.cabbage.config.handler;
 
 import com.cabbage.core.domain.dto.ResultDTO;
 import com.cabbage.service.TokenService;
@@ -9,7 +9,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
-public class JwtHandlerConfig {
+public class JwtHandler {
     @Autowired
     TokenService tokenService;
 

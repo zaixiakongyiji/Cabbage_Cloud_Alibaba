@@ -1,8 +1,9 @@
 package com.cabbage.core.domain.dto;
 
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Component;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
