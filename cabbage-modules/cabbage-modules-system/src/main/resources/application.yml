@@ -1,0 +1,52 @@
+mybatis-plus:
+  #  configuration:
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # ???????
+  typeAliasesPackage: com.example.cabbage.domain.entity
+  # ??mapper?????????mapper.xml????
+  mapperLocations: classpath*:/mapper/*.xml
+spring:
+  application:
+    name: System_Modules
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${configure.dev.address:localhost}:3306/security?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  data:
+    redis:
+      host: 127.0.0.1
+      database: 1
+      port: 6379
+      password:
+dubbo:
+  application:
+    name: System_Modules
+  #    logger: slf4j
+  protocol:
+    name: dubbo
+    port: 20882
+  registry:
+    address: zookeeper://${configure.prod.address:127.0.0.1}:2181
+
+#写你自己安装zookeeper的服务器地址
+server:
+  port: 18082
+configure:
+  dev:
+    address: 192.168.110.10
+  prod:
+    address: 49.234.7.243
+jwt:
+  config:
+    key: renqipd
+    ttl: 600000
+    remember: 604800000
+verify_code:
+  status: false
+redis:
+  prefix: sys

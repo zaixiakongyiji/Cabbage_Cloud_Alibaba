@@ -21,6 +21,8 @@
     <file url="file://$PROJECT_DIR$/cabbage-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cabbage-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cabbage-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cabbage-modules/cabbage-modules-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cabbage-modules/cabbage-modules-system/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cabbage-modules/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cabbage-modules/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
