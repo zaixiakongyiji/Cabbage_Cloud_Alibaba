@@ -1,6 +1,6 @@
 package com.cabbage.production;
 
-import com.cabbage.core.domain.dto.ResultDTO;
+import com.cabbage.core.domain.dto.Result;
 import com.cabbage.core.domain.model.LoginBody;
 import com.cabbage.service.LoginService;
 import io.swagger.annotations.Api;
@@ -30,9 +30,9 @@ public class AuthController {
 
     @PostMapping("/login")
     @ApiOperation("公共登錄")
-    public ResultDTO<String> login(@RequestBody LoginBody loginBody, HttpServletRequest request) {
+    public Result<String> login(@RequestBody LoginBody loginBody, HttpServletRequest request) {
         String jwt = loginService.login(loginBody, request);
-        return ResultDTO.success(jwt);
+        return Result.ok(jwt);
     }
 
     @ApiOperation("aa")

@@ -27,14 +27,11 @@ configure:
     address: 192.168.110.10
   prod:
     address: 49.234.7.243
-jwt:
-  config:
+  jwt:
     key: renqipd
-    ttl: 600000
+    ttl: 1800000
     remember: 604800000
-verify_code:
-  status: false
-redis:
-  prefix: sys
+  verify_code:
+    status: false
 
 

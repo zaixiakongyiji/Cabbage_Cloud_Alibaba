@@ -3,7 +3,7 @@ package com.cabbage.service;
 
 import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.cabbage.core.domain.dto.RedisKey;
+import com.cabbage.core.domain.dto.RedisPrefix;
 import com.cabbage.core.domain.model.LoginBody;
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -26,10 +26,10 @@ public class LoginService {
     @Autowired
     TokenService tokenService;
     @Autowired
-    RedisKey redisKey;
+    RedisPrefix redisPrefix;
     @Autowired
     private AuthenticationManager authenticationManager;
-    @Value("${verify_code.status}")
+    @Value("${configure.verify_code.status}")
     private Boolean verifyStatus;
 
 //    @Override
@@ -50,7 +50,7 @@ public class LoginService {
     }
 
     private void verificationCode(String code, String uuid) {
-        String redisCode = stringRedisTemplate.opsForValue().get(redisKey.forBiz("captchaKey", uuid));
+        String redisCode = stringRedisTemplate.opsForValue().get(redisPrefix.initialization("captchaKey", uuid));
         Assert.notNull(redisCode, "验证码过期，请刷新");
         Assert.isTrue(code.equalsIgnoreCase(redisCode), "验证码错误");
     }

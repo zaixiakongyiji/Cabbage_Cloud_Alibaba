@@ -8,6 +8,7 @@ import io.jsonwebtoken.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -26,15 +27,18 @@ public class TokenService {
     /**
      * jwt 加密 key，默认值：renqipd.
      */
-    private static String KEY = "renqipd";
+    @Value("${configure.jwt.key}")
+    private static String KEY;
     /**
      * jwt 过期时间，默认值：600000 {@code 10 分钟}.
      */
-    private static Long TTL = 1800000L;
+    @Value("${configure.jwt.ttl}")
+    private static Long TTL;
     /**
      * 开启 记住我 之后 jwt 过期时间，默认值 604800000 {@code 7 天}
      */
-    private static Long REMEMBER = 604800000L;
+    @Value("${configure.jwt.remember}")
+    private static Long REMEMBER;
     @Autowired
     StringRedisTemplate stringRedisTemplate;
 

@@ -1,34 +1,33 @@
 package com.cabbage.core.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 
 @Data
 @TableName("sec_role")
+@ApiModel(value = "Role",description = "角色")
 public class Role {
-    /**
-     * 主键
-     */
+
+
+    @ApiModelProperty("主键id")
     private Long id;
 
-    /**
-     * 角色名
-     */
+
+    @ApiModelProperty("角色名")
     private String name;
 
-    /**
-     * 描述
-     */
+
+    @ApiModelProperty("描述")
     private String description;
 
-    /**
-     * 创建时间
-     */
+
+    @ApiModelProperty("创建时间")
     private Long createTime;
 
-    /**
-     * 更新时间
-     */
+
+    @ApiModelProperty("更新时间")
     private Long updateTime;
 }

@@ -23,6 +23,26 @@ spring:
       database: 1
       port: 6379
       password:
+      prefix: sys
+#RabbitMQ
+  rabbitmq:
+    username: admin
+    password: Lc211010
+    virtual-host: /
+    host: 49.234.7.243
+    port: 5672
+    publisher-returns: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+      direct:
+        acknowledge-mode: manual
+rocketmq:
+  name-server: ${configure.prod.address:127.0.0.1}:9876
+  access-channel:
+
+
+
 dubbo:
   application:
     name: System_Modules
@@ -32,7 +52,6 @@ dubbo:
     port: 20882
   registry:
     address: zookeeper://${configure.prod.address:127.0.0.1}:2181
-
 #写你自己安装zookeeper的服务器地址
 server:
   port: 18082
@@ -41,12 +60,9 @@ configure:
     address: 192.168.110.10
   prod:
     address: 49.234.7.243
-jwt:
-  config:
+  jwt:
     key: renqipd
-    ttl: 600000
+    ttl: 1800000
     remember: 604800000
-verify_code:
-  status: false
-redis:
-  prefix: sys
+  verify_code:
+    status: false

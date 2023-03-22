@@ -2,17 +2,19 @@ package com.cabbage.core.domain.dto;
 
 import com.alibaba.fastjson2.annotation.JSONField;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-/**
- * @author xppd 1239694214@qq.com
- * @date 2021/12/1
- */
+import javax.annotation.security.DenyAll;
+
 @Data
-public class QueryDTO<T> {
+public class Query<T> {
+
     @JSONField(serialize = false)
+    @ApiModelProperty("数量")
     private int pageSize = 10;
     @JSONField(serialize = false)
+    @ApiModelProperty("页码")
     private int pageNum = 1;
 
     @JSONField(serialize = false)

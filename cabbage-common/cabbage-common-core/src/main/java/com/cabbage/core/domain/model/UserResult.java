@@ -35,23 +35,6 @@ public class UserResult implements UserDetails {
      * 加密密码
      */
     private String password;
-//    /**
-//     * 账号
-//     */
-//    private String loginName;
-    /**
-     * 角色
-     */
-
-//    /**
-//     * 数据权限
-//     */
-//    private Set<String> dataPermission;
-
-//    /**
-//     * 额外信息
-//     */
-//    private Map<String, Object> ext;
 
     private String nickName;
     /**
@@ -74,65 +57,9 @@ public class UserResult implements UserDetails {
     /**
      * 权限
      */
-//    private List<String> permission;
 
-//    /**
-//     * address
-//     */
-//    private String address;
-//    /**
-//     * 登录超时时间
-//     */
-//    private Long expire;
-//    /**
-//     * 错误信息
-//     */
-//    private String message;
-//    /**
-//     * 实现类
-//     */
-//    private String beanType;
-//    /**
-//     * 登陆方式
-//     */
-//    private String authType;
     private Collection<? extends GrantedAuthority> authorities;
 
-//    /**
-//     * 转化
-//     *
-//     * @param target 目标类型
-//     * @param <T>    类型
-//     * @return 结果
-//     */
-//    public <T> T toBean(Class<T> target) {
-//        T newInstance = null;
-//        try {
-//            newInstance = target.newInstance();
-//        } catch (Exception ignored) {
-//        }
-//
-//        if (null == newInstance) {
-//            return null;
-//        }
-//
-//        Map<String, Object> beanMap = this.ext;
-//        T finalNewInstance = newInstance;
-//        ReflectionUtils.doWithFields(target, field -> {
-//            field.setAccessible(true);
-//            Object o = beanMap.get(field.getName());
-//            if (null == o) {
-//                return;
-//            }
-//
-//            try {
-//                field.set(finalNewInstance, o);
-//            } catch (Exception ignore) {
-//            }
-//        });
-//
-//        return finalNewInstance;
-//    }
 
     public static UserResult creat(User user, List<Role> roles, List<Permission> permissions) {
         List<String> roleNames = roles.stream().map(Role::getName).collect(Collectors.toList());
