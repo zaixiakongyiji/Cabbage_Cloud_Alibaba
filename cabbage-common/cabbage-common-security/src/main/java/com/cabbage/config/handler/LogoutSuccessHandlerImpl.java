@@ -13,11 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-/**
- * 自定义退出处理类 返回成功
- *
- * @author tienchin
- */
+
 @Configuration
 @Slf4j
 public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler {

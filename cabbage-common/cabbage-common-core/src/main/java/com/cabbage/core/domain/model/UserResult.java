@@ -25,38 +25,22 @@ import java.util.stream.Collectors;
 @ToString
 public class UserResult implements UserDetails {
 
-    /**
-     * 索引(唯一, 必填)
-     */
+
     private Long id;
 
     private String username;
-    /**
-     * 加密密码
-     */
+
     private String password;
 
     private String nickName;
-    /**
-     * 电话号码
-     */
+
     private String phone;
 
-
-    /**
-     * 性别
-     */
     private Integer sex;
 
-    /**
-     * 状态，启用-1，禁用-0
-     */
     private Integer status;
 
     private List<String> roles;
-    /**
-     * 权限
-     */
 
     private Collection<? extends GrantedAuthority> authorities;
 
@@ -82,12 +66,7 @@ public class UserResult implements UserDetails {
         return password;
     }
 
-    /**
-     * 密码
-     *
-     * @param password 密码
-     * @return this
-     */
+
     public UserResult setPassword(String password) {
         this.password = password;
         if (password.length() > 4) {
