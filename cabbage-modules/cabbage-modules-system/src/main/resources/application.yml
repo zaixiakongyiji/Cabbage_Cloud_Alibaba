@@ -24,7 +24,7 @@ spring:
       port: 6379
       password:
       prefix: sys
-#RabbitMQ
+  #RabbitMQ
   rabbitmq:
     username: admin
     password: Lc211010
@@ -32,6 +32,7 @@ spring:
     host: 49.234.7.243
     port: 5672
     publisher-returns: true
+    publisher-confirm-type: correlated
     listener:
       simple:
         acknowledge-mode: manual
@@ -39,7 +40,10 @@ spring:
         acknowledge-mode: manual
 rocketmq:
   name-server: ${configure.prod.address:127.0.0.1}:9876
-  access-channel:
+  producer:
+    group: shengchanzhe
+  consumer:
+    group: xiaofeizhe
 
 
 
