@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.autoconfigure.RocketMQAutoConfiguration;
 import org.apache.rocketmq.spring.autoconfigure.RocketMQTransactionConfiguration;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
@@ -13,9 +14,12 @@ import org.springframework.stereotype.Service;
 @Configuration
 public class RocketConfig {
 
+//    @Autowired
+//    RocketMQ
 
 
-
-
-
+//    @Bean
+//    RocketMQTemplate rocketMQTemplate(){
+//
+//    }
 }

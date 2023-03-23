@@ -24,9 +24,9 @@ server:
   port: 8080
 configure:
   dev:
-    address: 192.168.110.10
+    address: xx
   prod:
-    address: 49.234.7.243
+    address: xx
   jwt:
     key: renqipd
     ttl: 1800000
