@@ -42,6 +42,12 @@ rocketmq:
   name-server: ${configure.prod.address:127.0.0.1}:9876
   producer:
     group: shengchanzhe
+      # 发送同步消息失败时，重试次数，默认是 2
+    retry-times-when-send-failed: 2
+      # 发送异步消息失败时，重试次数，默认是 2
+    retry-times-when-send-async-failed: 2
+      # 发送消息超时时间，默认是 3s
+    send-message-timeout: 3000
   consumer:
     group: xiaofeizhe
 #    listeners:
