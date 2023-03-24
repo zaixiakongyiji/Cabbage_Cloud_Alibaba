@@ -8,7 +8,7 @@ import org.apache.rocketmq.remoting.common.RemotingHelper;
 public class test1 {
         public static void main(String[] args) throws Exception {
         // 实例化消息生产者Producer
-        DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
+        DefaultMQProducer producer = new DefaultMQProducer("cabbage_Test");
         // 设置NameServer的地址
         producer.setNamesrvAddr("49.234.7.243:9876");
         // 设置消息同步发送失败时的重试次数，默认为 2
@@ -17,7 +17,7 @@ public class test1 {
         producer.setSendMsgTimeout(3000);
         // 启动Producer实例
         producer.start();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             // 创建消息，并指定Topic，Tag和消息体
             Message msg = new Message("TopicTest" /* Topic */,
                     "TagA" /* Tag */,

@@ -3,7 +3,6 @@ package com.cabbage.rabbitMQ.handler;
 import com.alibaba.fastjson2.JSON;
 import com.cabbage.constants.RabbitConstants;
 import com.rabbitmq.client.Channel;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -15,7 +14,7 @@ import java.io.IOException;
 
 @Slf4j
 @Component
-public class ConsumerHander {
+public class RabbitConsumerHandler {
 
 
 
