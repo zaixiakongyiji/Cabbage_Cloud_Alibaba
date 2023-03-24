@@ -2,9 +2,7 @@ package com.cabbage.rocketMQ.service;
 
 import cn.hutool.core.lang.Assert;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.rocketmq.client.producer.SendCallback;
-import org.apache.rocketmq.client.producer.SendResult;
-import org.apache.rocketmq.client.producer.SendStatus;
+import org.apache.rocketmq.client.producer.*;
 import org.apache.rocketmq.common.UtilAll;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
@@ -45,6 +43,8 @@ public class RocketMQProducerService {
             }
 
         };
+
+
     }
 
 
@@ -62,13 +62,13 @@ public class RocketMQProducerService {
 
     }
 
-    public boolean asyncProducer(String msg, String topicName){
-            try {
-                rocketMQTemplate.asyncSend(topicName, getMessage(msg), getSendCallback());
-                return true;
-            } catch(Exception e) {
-                return false;
-            }
+    public boolean asyncProducer(String msg, String topicName) {
+        try {
+            rocketMQTemplate.asyncSend(topicName, getMessage(msg), getSendCallback());
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void onewayProducer(String msg, String topicName) throws UnsupportedEncodingException {
@@ -76,9 +76,15 @@ public class RocketMQProducerService {
     }
 
 
-
-
-
+    public boolean transactionProducer(String msg, String topicName, Object extArg) throws UnsupportedEncodingException {
+        try {
+            TransactionSendResult transactionSendResult = rocketMQTemplate.sendMessageInTransaction(topicName, (org.springframework.messaging.Message<?>) getMessage(msg), extArg);
+            Assert.isFalse(LocalTransactionState.UNKNOW.equals(transactionSendResult.getLocalTransactionState()), "消息发送失败,原因为：" + transactionSendResult.getLocalTransactionState(),transactionSendResult);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 
 }

@@ -44,6 +44,8 @@ rocketmq:
     group: shengchanzhe
   consumer:
     group: xiaofeizhe
+#    listeners:
+
 
 
 
