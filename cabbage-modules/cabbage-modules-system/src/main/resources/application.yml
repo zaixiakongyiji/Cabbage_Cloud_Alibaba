@@ -69,9 +69,9 @@ server:
   port: 18082
 configure:
   dev:
-    address: 192.168.110.10
+    address: xxxxxx
   prod:
-    address: 49.234.7.243
+    address: xxxxxx
   jwt:
     key: renqipd
     ttl: 1800000
