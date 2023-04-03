@@ -34,8 +34,6 @@ public class SecurityConfig {
     LogoutSuccessHandler logoutSuccessHandler;
 
 
-
-
     @Bean
     JwtAuthenticationFilter authFilter() {
         return new JwtAuthenticationFilter();
@@ -63,6 +61,12 @@ public class SecurityConfig {
                         .requestMatchers("/login").anonymous()
                         .requestMatchers("/swagger-ui.html").anonymous()
                         .requestMatchers("/swagger-resources/**").anonymous()
+                        .requestMatchers("/doc.html").anonymous()
+                        .requestMatchers("/swagger/**").anonymous()
+                        .requestMatchers("/v2/**").anonymous()
+                        .requestMatchers("/static/**").anonymous()
+
+                        .requestMatchers("/doc.html**/**").anonymous()
                         .requestMatchers("/webjars/**").anonymous()
                         .requestMatchers("/*/api-docs").anonymous()
                         .requestMatchers("/druid/**").anonymous()

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@EnableSwagger2WebFlux
+//@EnableSwagger2WebFlux
 @EnableKnife4j
 public class SwaggerConfig {
 
