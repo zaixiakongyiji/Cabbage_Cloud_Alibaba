@@ -1,8 +1,8 @@
 package com.cabbage.aspect;
 
-import com.cabbage.GatwayRoute.api.SystemService;
-import com.cabbage.GatwayRoute.entity.SysLog;
 import com.cabbage.annotation.Log;
+import com.cabbage.domain.SysLog;
+import com.cabbage.mapper.SysLogMapper;
 import com.cabbage.util.IpUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,9 +31,7 @@ public class LogAspect {
 
 
     @Resource
-    SystemService service;
-
-
+    SysLogMapper sysLogMapper;
 
     /**
      * 获取请求参数
@@ -96,7 +94,7 @@ public class LogAspect {
             return pjp.proceed();
         } finally {
 //            存数据库
-            service.insert(sysLog);
+            sysLogMapper.insert(sysLog);
         }
 
         return result;

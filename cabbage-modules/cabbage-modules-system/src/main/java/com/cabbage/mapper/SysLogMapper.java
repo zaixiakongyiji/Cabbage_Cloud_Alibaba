@@ -1,7 +1,7 @@
 package com.cabbage.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cabbage.GatwayRoute.entity.SysLog;
+import com.cabbage.domain.SysLog;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
