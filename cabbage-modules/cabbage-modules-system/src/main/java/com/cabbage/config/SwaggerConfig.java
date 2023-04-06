@@ -3,6 +3,7 @@ package com.cabbage.config;
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -24,20 +25,22 @@ import java.util.List;
 @EnableKnife4j
 public class SwaggerConfig {
 
-    @Autowired
-    Environment env;
+//    @Autowired
+//    Environment env;
+
+    @Value("${spring.application.name}")
+    String name;
 
     @Bean(value = "defaultApi2")
     public Docket defaultApi2() {
-        Docket docket = new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
-                .groupName(env.getProperty("spring.application.name"))
+                .groupName(name)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.cabbage"))
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
                 .build();
-        return docket;
     }
 
     private List<ApiKey> apiKeys() {
@@ -49,8 +52,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title(env.getProperty("spring.application.name") + " APIs")
-                .description("# " + env.getProperty("spring.application.name") + " APIs")
+                .title(name + " APIs")
+                .description("# " + name + " APIs")
 //                .termsOfServiceUrl("http://www.xx.com/")
 //                .contact("xx@qq.com")
                 .version("1.0")
