@@ -48,7 +48,7 @@ configure:
   prod:
     address: xx
   jwt:
-    key: renqipd
+    key: cabbage
     ttl: 1800000
     remember: 604800000
   verify_code:

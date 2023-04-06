@@ -37,7 +37,6 @@ public class CaptchaController {
     public void getCaptcha(@PathVariable("uuid") String uuid, HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         session.setAttribute(CaptchaConfig.RESPONSE_KEY_UUID, uuid);
-//        captcha.buildCaptcha(session, response);
         captcha.generateCaptcha(session, response);
         Object attribute = session.getAttribute(CaptchaConfig.SESSION_KEY);
         String captchaKey = redisPrefix.initialization("captchaKey", uuid);
@@ -51,7 +50,6 @@ public class CaptchaController {
         String uuid = UUID.randomUUID(true).toString(true);
         HttpSession session = request.getSession();
         session.setAttribute(CaptchaConfig.RESPONSE_KEY_UUID, uuid);
-//        captcha.buildCaptcha(session, response);
         captcha.generateCaptcha(session, response);
         Object attribute = session.getAttribute(CaptchaConfig.SESSION_KEY);
         String captchaKey = redisPrefix.initialization("captchaKey", uuid);
