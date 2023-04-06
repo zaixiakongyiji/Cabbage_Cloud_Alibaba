@@ -18,9 +18,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LoginService {
-//    String login(LoginBody loginBody, HttpServletRequest request);
-
-
     @Resource
     StringRedisTemplate stringRedisTemplate;
     @Autowired
@@ -32,7 +29,6 @@ public class LoginService {
     @Value("${configure.verify_code.status}")
     private Boolean verifyStatus;
 
-//    @Override
     public String login(LoginBody loginBody, HttpServletRequest request) {
         if (StringUtils.isBlank(loginBody.getUsername()) || StringUtils.isBlank(loginBody.getPassword())) {
             throw new RuntimeException("用户名或密码为空!");
@@ -43,10 +39,7 @@ public class LoginService {
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(loginBody.getUsername(), loginBody.getPassword()));
         Assert.notNull(authentication, "用户名或密码错误");
-        String jwt = tokenService.createJWT(authentication, loginBody.getRememberMe());
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("token",jwt);
-        return jwt;
+        return tokenService.createJWT(authentication, loginBody.getRememberMe());
     }
 
     private void verificationCode(String code, String uuid) {

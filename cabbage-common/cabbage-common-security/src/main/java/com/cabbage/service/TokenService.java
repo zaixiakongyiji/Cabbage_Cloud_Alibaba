@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class TokenService {
     private static final Long MILLIS_MINUTE_TEN = 20 * 60L;
     /**
-     * jwt 加密 key，默认值：renqipd.
+     * jwt 加密 key，默认值：cabbage.
      */
     @Value("${configure.jwt.key}")
     private static String KEY;
