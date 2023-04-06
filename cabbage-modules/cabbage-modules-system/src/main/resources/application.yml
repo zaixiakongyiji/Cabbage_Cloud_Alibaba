@@ -1,5 +1,80 @@
+mybatis-plus:
+  #  configuration:
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # ???????
+  typeAliasesPackage: com.example.cabbage.domain.entity
+  # ??mapper?????????mapper.xml????
+  mapperLocations: classpath*:/mapper/*.xml
 spring:
-  profiles:
-    active: local
+  application:
+    name: System_Modules
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${configure.dev.address:localhost}:3306/security?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  data:
+    redis:
+      host: 127.0.0.1
+      database: 1
+      port: 6379
+      password:
+      prefix: sys
+  #RabbitMQ
+  rabbitmq:
+    username: admin
+    password: Lc211010
+    virtual-host: /
+    host: 49.234.7.243
+    port: 5672
+    publisher-returns: true
+    publisher-confirm-type: correlated
+    listener:
+      simple:
+        acknowledge-mode: manual
+      direct:
+        acknowledge-mode: manual
+rocketmq:
+  name-server: ${configure.prod.address:127.0.0.1}:9876
+  producer:
+    group: shengchanzhe
+      # 发送同步消息失败时，重试次数，默认是 2
+    retry-times-when-send-failed: 2
+      # 发送异步消息失败时，重试次数，默认是 2
+    retry-times-when-send-async-failed: 2
+      # 发送消息超时时间，默认是 3s
+    send-message-timeout: 3000
+  consumer:
+    group: xiaofeizhe
+#    listeners:
 
 
+
+
+dubbo:
+  application:
+    name: System_Modules
+  #    logger: slf4j
+  protocol:
+    name: dubbo
+    port: 20882
+  registry:
+    address: zookeeper://${configure.prod.address:127.0.0.1}:2181
+#写你自己安装zookeeper的服务器地址
+server:
+  port: 18082
+configure:
+  dev:
+    address: xxxxxx
+  prod:
+    address: xxxxxx
+  jwt:
+    key: cabbage
+    ttl: 1800000
+    remember: 604800000
+  verify_code:
+    status: false
