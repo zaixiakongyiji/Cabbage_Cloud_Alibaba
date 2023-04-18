@@ -44,11 +44,11 @@
 <!--            <artifactId>spring-boot-starter-amqp</artifactId>-->
 <!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
-            <version> 5.1.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.rocketmq</groupId>-->
+<!--            <artifactId>rocketmq-client</artifactId>-->
+<!--            <version> 5.1.0</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
@@ -62,10 +62,16 @@
 <!--            <version>0.7.2</version>-->
 <!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-stream-binder-kafka</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>com.github.luben</groupId>-->
+<!--                    <artifactId>zstd-jni</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -151,6 +157,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>1.53.0</version>
         </dependency>
     </dependencies>
     <build>

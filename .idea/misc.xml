@@ -10,7 +10,6 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/cabbage-common/cabbage-common-seata/pom.xml" />
-        <option value="$PROJECT_DIR$/cabbage-common/cabbage-common-swagger/pom.xml" />
       </set>
     </option>
   </component>

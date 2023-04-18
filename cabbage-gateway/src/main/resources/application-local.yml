@@ -1,0 +1,71 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: # 允许哪些网络的跨域请求
+              - "http://localhost:8881"
+              - "http:www.leyou.com"
+            allowedMethods: # 允许的跨域ajax的请求方式
+              - "GET"
+              - "POST"
+              - "DELETE"
+              - "PUT"
+              - "OPTIONS"
+            allowedHeaders: "*"  #允许在请求中携带的头信息
+            allowCredentials: true  # 是否允许携带cookie
+            maxAge: 360000 # 这次跨域检测的有效期
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${configure.dev.address:localhost}:3306/dubbo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  rabbitmq:
+    addresses: ${configure.prod.address:127.0.0.1}
+rocketmq:
+  name-server: ${configure.prod.address:127.0.0.1}:9876
+  producer:
+    group: shengchanzhe
+    # 发送同步消息失败时，重试次数，默认是 2
+    retry-times-when-send-failed: 2
+    # 发送异步消息失败时，重试次数，默认是 2
+    retry-times-when-send-async-failed: 2
+    # 发送消息超时时间，默认是 3s
+    send-message-timeout: 3000
+  consumer:
+    group: xiaofeizhe
+  #    listeners:
+
+dubbo:
+  application:
+    name: Cabbage-GateAway
+    logger: slf4j
+    qos-port: 33333
+  protocol:
+    name: dubbo
+    port: 20885
+  registry:
+    address: zookeeper://${configure.prod.address:127.0.0.1}:2181
+#写你自己安装zookeeper的服务器地址
+server:
+  port: 8082
+configure:
+  dev:
+    address: xxx
+  prod:
+    address: xxx
+  jwt:
+    key: cabbage
+    ttl: 1800000
+    remember: 604800000
+  verify_code:
+    status: false
+

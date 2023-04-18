@@ -5,6 +5,7 @@ import com.cabbage.core.domain.model.LoginBody;
 import com.cabbage.service.LoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @Slf4j
-@Api("公共")
+@Api(tags = "公共")
 @RestController
 public class AuthController {
 

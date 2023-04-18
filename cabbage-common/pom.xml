@@ -19,6 +19,7 @@
         <module>cabbage-common-swagger</module>
         <module>cabbage-common-datasource</module>
         <module>cabbage-common-log</module>
+        <module>cabbage-common-bom</module>
     </modules>
 
     <properties>
@@ -32,7 +33,6 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
 
