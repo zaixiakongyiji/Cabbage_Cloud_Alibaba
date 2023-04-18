@@ -19,10 +19,12 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import javax.annotation.Resource;
+
 @Configuration
 public class SecurityConfig {
 
-    @Autowired
+    @Resource
     UserDetailsService userDetailsService;
     @Autowired
     AccessDeniedHandler accessDeniedHandler;
@@ -59,18 +61,16 @@ public class SecurityConfig {
                 .logout().logoutSuccessHandler(logoutSuccessHandler).and()
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/login").anonymous()
-                        .requestMatchers("/swagger-ui.html").anonymous()
-                        .requestMatchers("/swagger-resources/**").anonymous()
-                        .requestMatchers("/doc.html").anonymous()
-                        .requestMatchers("/swagger/**").anonymous()
-                        .requestMatchers("/v2/**").anonymous()
-                        .requestMatchers("/static/**").anonymous()
+                        .requestMatchers("/swagger-ui.html*").anonymous()
+                        .requestMatchers("/swagger-resources*").anonymous()
+                        .requestMatchers("/doc.html**").anonymous()
+                        .requestMatchers("/swagger/*").anonymous()
+                        .requestMatchers("/v3/api-docs*").anonymous()
+                        .requestMatchers("/static/*").anonymous()
 
-                        .requestMatchers("/doc.html**/**").anonymous()
                         .requestMatchers("/webjars/**").anonymous()
-                        .requestMatchers("/*/api-docs").anonymous()
-                        .requestMatchers("/druid/**").anonymous()
-                        .requestMatchers("/captcha**").anonymous()
+                        .requestMatchers("/druid/").anonymous()
+                        .requestMatchers("/captcha*").anonymous()
 
                         .anyRequest().authenticated()
                 )

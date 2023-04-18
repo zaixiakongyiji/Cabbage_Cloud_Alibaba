@@ -38,6 +38,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.cabbage</groupId>
+            <artifactId>cabbage-common-redis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>com.cabbage</groupId>
@@ -56,6 +61,17 @@
             <artifactId>cabbage-common-datasource</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>1.53.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+            <version>2.0.8</version>
+        </dependency>
 
 
     </dependencies>
@@ -72,5 +88,17 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <!--   指定配置文件的位置  -->
+                <directory>src/main/resources</directory>
+                <includes>
+                    <!--   读取resources下的所有文件，include表示指定文件内的，相对的还有excludes ，排除其下的文件 -->
+                    <include>**/*</include>
+                </includes>
+                <!-- 开启替换标签，比如我们的'@env'就是通过这个替换的         -->
+                <filtering>false</filtering>
+            </resource>
+        </resources>
     </build>
 </project>

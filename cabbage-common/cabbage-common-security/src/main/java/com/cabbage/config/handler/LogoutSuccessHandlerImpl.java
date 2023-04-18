@@ -18,7 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @Slf4j
 public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler {
     @Autowired
-    private TokenService tokenService;
+    TokenService tokenService;
 
     /**
      * 退出处理

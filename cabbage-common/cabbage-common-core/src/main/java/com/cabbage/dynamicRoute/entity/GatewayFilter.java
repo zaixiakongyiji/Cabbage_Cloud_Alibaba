@@ -24,7 +24,7 @@ public class GatewayFilter {
     public static final String COL_PARAM_SIX = "param_six";
     public static final String COL_PARAM_SEVEN = "param_seven";
     @TableId(value = "id", type = IdType.AUTO)
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "主键id")
     private Integer id;
     /**
      * 路由id

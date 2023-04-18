@@ -12,20 +12,17 @@ import lombok.Data;
 @Data
 @TableName(value = "predicate_type")
 public class PredicateType {
-    public static final String COL_ID = "id";
-    public static final String COL_NAME = "name";
-    public static final String COL_NAME_KEY_ONE = "name_key_one";
-    public static final String COL_NAME_KEY_TWO = "name_key_two";
+
     @TableId(value = "id", type = IdType.AUTO)
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "id")
     private Integer id;
     @TableField(value = "`name`")
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "名字")
     private String name;
     @TableField(value = "name_key_one")
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "键值1")
     private String nameKeyOne;
     @TableField(value = "name_key_two")
-    @ApiModelProperty(value = "")
+    @ApiModelProperty(value = "键值2")
     private String nameKeyTwo;
 }
