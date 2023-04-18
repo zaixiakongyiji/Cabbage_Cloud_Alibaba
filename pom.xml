@@ -25,6 +25,7 @@
         <maven.compiler.targer>17</maven.compiler.targer>
         <spring.boot.version>3.0.0</spring.boot.version>
         <spring.cloud.version>2022.0.0</spring.cloud.version>
+        <grpc-netty.version>1.53.0</grpc-netty.version>
         <spring.alibaba.version>2022.0.0.0-RC1</spring.alibaba.version>
         <dubbo.version>3.2.0-beta.4</dubbo.version>
         <gateway.version>4.0.0</gateway.version>
@@ -40,6 +41,7 @@
         <security.version>2.2.5.RELEASE</security.version>
         <druid.version>1.2.16</druid.version>
         <zookeeper.version>3.6.0</zookeeper.version>
+        <cabbage.version>1.0-SNAPSHOT</cabbage.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -48,6 +50,14 @@
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cabbage</groupId>
+                <artifactId>cabbage-common-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
@@ -79,6 +89,13 @@
                 <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -185,6 +202,12 @@
         </dependency>
 
         <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
         </dependency>
@@ -192,7 +215,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.32</version>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>${grpc-netty.version}</version>
         </dependency>
 
 
@@ -211,4 +239,17 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <!-- 环境标识，需要与配置文件的名称相对应 -->
+                <profiles.active>dev</profiles.active>
+            </properties>
+            <activation>
+                <!-- 默认环境 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 </project>
