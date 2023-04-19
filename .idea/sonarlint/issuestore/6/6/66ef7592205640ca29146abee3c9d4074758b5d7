@@ -1,0 +1,16 @@
+
+‹
+java:S1192…"nDefine a constant instead of duplicating this literal "token è§£æå¤±è´¥ï¼Œè¯·å°è¯•é‡æ–°ç™»å½•ï¼" 4 times.(ó•šu8•—›÷0
+p
+java:S11921"NDefine a constant instead of duplicating this literal "security:jwt:" 5 times.(’¿‘íÿÿÿÿÿ8‡•—›÷0
+E
+java:S5411M"(Use a primitive boolean expression here.(ô ¹ç8Š•—›÷0
+p
+java:S3008 "NRename this field "KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÄ‡©ùÿÿÿÿ8ÿ•—›÷0
+p
+java:S3008%"NRename this field "TTL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–³ß²şÿÿÿÿ8ÿ•—›÷0
+p
+java:S3008*"SRename this field "REMEMBER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èùºØ8€–—›÷0
+h
+java:S3252|"KUse static access with "cn.hutool.core.text.CharSequenceUtil" for "equals".(‡·áˆ8¥–—›÷0
+Y	java:S125§"<This block of commented-out lines of code should be removed.(´²Ô‰8°–—›÷0
