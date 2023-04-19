@@ -17,6 +17,7 @@
         <module>cabbage-auth</module>
         <module>cabbage-common/cabbage-common-seata</module>
         <module>cabbage-common/cabbage-common-mq</module>
+        <module>cabbage-common/cabbage-common-xxxjob</module>
     </modules>
 
     <properties>

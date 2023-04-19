@@ -14,7 +14,7 @@
     <url>http://maven.apache.org</url>
     <modules>
         <module>cabbage-common-security</module>
-        <module>cabbage-common-redis</module>
+        <module>cabbage-common-mybatis</module>
         <module>cabbage-common-core</module>
         <module>cabbage-common-swagger</module>
         <module>cabbage-common-datasource</module>

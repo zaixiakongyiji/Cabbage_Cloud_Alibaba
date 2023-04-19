@@ -40,7 +40,7 @@
 
         <dependency>
             <groupId>com.cabbage</groupId>
-            <artifactId>cabbage-common-redis</artifactId>
+            <artifactId>cabbage-common-mybatis</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

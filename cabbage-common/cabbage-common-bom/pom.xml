@@ -47,7 +47,7 @@
 
             <dependency>
                 <groupId>com.cabbage</groupId>
-                <artifactId>cabbage-common-redis</artifactId>
+                <artifactId>cabbage-common-mybatis</artifactId>
                 <version>${cabbage.version}</version>
             </dependency>
 
@@ -84,6 +84,12 @@
             <dependency>
                 <groupId>com.cabbage</groupId>
                 <artifactId>cabbage-common-mq</artifactId>
+                <version>${cabbage.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cabbage.wyyyy</groupId>
+                <artifactId>cabbage-common-xxxjob</artifactId>
                 <version>${cabbage.version}</version>
             </dependency>
 
