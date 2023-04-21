@@ -16,6 +16,9 @@
         <module>cabbage-common-security</module>
         <module>cabbage-common-mybatis</module>
         <module>cabbage-common-core</module>
+        <module>cabbage-common-seata</module>
+        <module>cabbage-common-xxxjob</module>
+        <module>cabbage-common-mq</module>
         <module>cabbage-common-swagger</module>
         <module>cabbage-common-datasource</module>
         <module>cabbage-common-log</module>

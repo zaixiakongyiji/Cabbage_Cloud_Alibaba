@@ -88,7 +88,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.cabbage.wyyyy</groupId>
+                <groupId>com.cabbage</groupId>
                 <artifactId>cabbage-common-xxxjob</artifactId>
                 <version>${cabbage.version}</version>
             </dependency>
@@ -119,6 +119,12 @@
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cabbage</groupId>
+                <artifactId>cabbage-admin-api</artifactId>
+                <version>${cabbage.version}</version>
             </dependency>
 
 

@@ -1,8 +1,6 @@
 package com.cabbage.config.handler;
 
 import com.cabbage.core.domain.dto.Result;
-import com.cabbage.service.TokenService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.web.AuthenticationEntryPoint;

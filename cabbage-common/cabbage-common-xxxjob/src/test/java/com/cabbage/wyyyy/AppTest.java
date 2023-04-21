@@ -1,4 +1,4 @@
-package com.cabbage.wyyyy;
+package com.cabbage;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

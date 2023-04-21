@@ -39,11 +39,14 @@
             <groupId>com.cabbage</groupId>
             <artifactId>cabbage-common-core</artifactId>
         </dependency>
-<!--        redis并入core-->
+
+        <dependency>
+            <groupId>com.cabbage</groupId>
+            <artifactId>cabbage-admin-api</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.cabbage</groupId>
             <artifactId>cabbage-common-mybatis</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <!--common utils-->

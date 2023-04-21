@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.cabbage.core.mapper.PermissionMapper">
-    <select id="getList" resultType="com.cabbage.core.domain.entity.Permission">
+<mapper namespace="com.cabbage.mapper.PermissionMapper">
+    <select id="getList" resultType="com.cabbage.entity.Permission">
         SELECT DISTINCT *
         FROM sec_permission p
         left join sec_role_permission rp on p.id=rp.permission_id

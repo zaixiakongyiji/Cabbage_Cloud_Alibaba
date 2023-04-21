@@ -12,12 +12,11 @@
     <modules>
         <module>cabbage-common</module>
         <module>cabbage-gateway</module>
-        <module>cabbage-api</module>
+        <module>cabbage-admin</module>
         <module>cabbage-modules</module>
         <module>cabbage-auth</module>
-        <module>cabbage-common/cabbage-common-seata</module>
-        <module>cabbage-common/cabbage-common-mq</module>
-        <module>cabbage-common/cabbage-common-xxxjob</module>
+        <module>cabbage-admin</module>
+        <module>cabbage-nacoscfg</module>
     </modules>
 
     <properties>
