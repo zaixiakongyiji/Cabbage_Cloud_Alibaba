@@ -1,19 +1,14 @@
 package com.cabbage.production;
 
-import com.cabbage.dto.Result;
-import com.cabbage.dubbo.RemoteClientDetailsService;
+import com.cabbage.dubbo.SysOauthClientDetailsService;
 import com.cabbage.entity.SysOauthClientDetails;
-import com.cabbage.model.LoginBody;
 import com.cabbage.service.LoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.Tag;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.endpoint.OAuth2ParameterNames;
 import org.springframework.util.StringUtils;
@@ -33,11 +28,11 @@ public class AuthController {
     @Autowired
     LoginService loginService;
 
-    @Autowired
-    PasswordEncoder passwordEncoder;
+//    @Autowired
+//    PasswordEncoder passwordEncoder;
 
     @DubboReference
-    RemoteClientDetailsService clientDetailsService;
+    SysOauthClientDetailsService clientDetailsService;
 
 
     @GetMapping("/doLogin")
@@ -69,12 +64,12 @@ public class AuthController {
         }
     }
 
-    @ApiOperation("aa")
-    @GetMapping("/aa")
-    public String a() {
-        String a = passwordEncoder.encode("123456");
-        return a;
-    }
+//    @ApiOperation("aa")
+//    @GetMapping("/aa")
+//    public String a() {
+//        String a = passwordEncoder.encode("123456");
+//        return a;
+//    }
 
 
 }

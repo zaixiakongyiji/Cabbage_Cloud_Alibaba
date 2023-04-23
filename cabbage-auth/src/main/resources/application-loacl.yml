@@ -1,10 +1,10 @@
 spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${configure.dev.address:localhost}:3306/dubbo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://${configure.dev.address:localhost}:3306/dubbo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: 123456
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

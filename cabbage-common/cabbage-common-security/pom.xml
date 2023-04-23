@@ -31,7 +31,7 @@
 
         <dependency>
             <groupId>com.cabbage</groupId>
-            <artifactId>cabbage-api</artifactId>
+            <artifactId>cabbage-admin-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

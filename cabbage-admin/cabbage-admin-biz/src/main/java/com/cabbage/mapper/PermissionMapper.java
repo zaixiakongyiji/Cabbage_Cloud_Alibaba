@@ -1,7 +1,7 @@
 package com.cabbage.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cabbage.core.domain.entity.Permission;
+import com.cabbage.entity.Permission;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

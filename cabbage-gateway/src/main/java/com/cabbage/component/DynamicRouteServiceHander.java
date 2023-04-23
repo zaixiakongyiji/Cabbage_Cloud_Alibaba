@@ -1,10 +1,11 @@
 package com.cabbage.component;
 
+
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.cabbage.GatwayRoute.api.RouteService;
-import com.cabbage.dynamicRoute.entity.*;
-import com.cabbage.dynamicRoute.service.*;
+import com.cabbage.dubbo.*;
+import com.cabbage.entity.route.*;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -25,19 +26,19 @@ import java.util.Map;
 
 @Component
 @DubboService
-public class DynamicRouteServiceHander implements RouteService, ApplicationEventPublisherAware, CommandLineRunner {
+public class DynamicRouteServiceHander implements ApplicationEventPublisherAware, CommandLineRunner {
 
-    @Autowired
+    @DubboReference
     GatewayFilterService filterService;
-    @Autowired
+    @DubboReference
     GatewayRouteService routeService;
-    @Autowired
+    @DubboReference
     GatewayPredicateService predicateService;
     ApplicationEventPublisher publisher;
-    @Autowired
+    @DubboReference
     PredicateTypeService predicateTypeService;
 
-    @Autowired
+    @DubboReference
     FilterTypeService filterTypeService;
     @Autowired
     RedisRouteDefinitionRepository routeDefinitionWriter;

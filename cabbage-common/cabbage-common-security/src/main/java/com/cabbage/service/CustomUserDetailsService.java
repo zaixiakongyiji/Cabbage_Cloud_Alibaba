@@ -1,11 +1,15 @@
 package com.cabbage.service;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.cabbage.dubbo.PermissionSevice;
+import com.cabbage.dubbo.RoleService;
+import com.cabbage.dubbo.UserService;
 import com.cabbage.entity.Permission;
 import com.cabbage.entity.Role;
 import com.cabbage.entity.User;
 import lombok.extern.slf4j.Slf4j;
 
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -18,13 +22,13 @@ import java.util.stream.Collectors;
 @Slf4j
 public class CustomUserDetailsService implements UserDetailsService {
 
-    @Autowired
+    @DubboReference
     UserService userService;
 
-    @Autowired
+    @DubboReference
     RoleService roleService;
 
-    @Autowired
+    @DubboReference
     PermissionSevice permissionSevice;
 
     @Override

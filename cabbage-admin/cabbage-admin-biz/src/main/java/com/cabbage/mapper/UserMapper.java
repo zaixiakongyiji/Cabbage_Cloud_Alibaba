@@ -1,7 +1,7 @@
 package com.cabbage.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cabbage.core.domain.entity.User;
+import com.cabbage.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
