@@ -3,8 +3,8 @@ package com.cabbage.service;
 
 import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.cabbage.core.domain.dto.RedisPrefix;
-import com.cabbage.core.domain.model.LoginBody;
+import com.cabbage.dto.RedisPrefix;
+import com.cabbage.model.LoginBody;
 import jakarta.servlet.http.HttpServletRequest;
 
 import jakarta.annotation.Resource;

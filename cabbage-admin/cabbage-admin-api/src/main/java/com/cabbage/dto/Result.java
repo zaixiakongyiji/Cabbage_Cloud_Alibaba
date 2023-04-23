@@ -32,11 +32,11 @@ public class Result<T> {
         return new Result<>(0, "成功", "", null);
     }
 
-    public <D> Result<D> paramEro(String eroMes) {
+    public static <D> Result<D> paramEro(String eroMes) {
         return new Result<>(-2, "参数异常", eroMes, null);
     }
 
-    public <D> Result<D> ero(String eroMes) {
+    public static <D> Result<D> ero(String eroMes) {
         return new Result<>(-1, "操作失败", eroMes, null);
     }
 

@@ -1,10 +1,10 @@
 package com.cabbage.filter;
 
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.cabbage.core.domain.model.UserResult;
 import com.cabbage.service.CustomUserDetailsService;
 import com.cabbage.service.TokenService;
 
+import com.cabbage.service.UserResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

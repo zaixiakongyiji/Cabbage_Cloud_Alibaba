@@ -1,13 +1,9 @@
 package com.cabbage.service;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.cabbage.core.service.PermissionSevice;
-import com.cabbage.core.service.RoleService;
-import com.cabbage.core.service.UserService;
-import com.cabbage.core.domain.entity.Permission;
-import com.cabbage.core.domain.entity.Role;
-import com.cabbage.core.domain.entity.User;
-import com.cabbage.core.domain.model.UserResult;
+import com.cabbage.entity.Permission;
+import com.cabbage.entity.Role;
+import com.cabbage.entity.User;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;

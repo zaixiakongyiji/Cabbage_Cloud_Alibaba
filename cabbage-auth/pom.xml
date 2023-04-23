@@ -42,6 +42,8 @@
         <!--            <artifactId>pig-common-feign</artifactId>-->
         <!--        </dependency>-->
 
+
+
         <!--api、model 模块-->
         <dependency>
             <groupId>com.cabbage</groupId>

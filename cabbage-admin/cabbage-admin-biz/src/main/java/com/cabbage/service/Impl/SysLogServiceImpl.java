@@ -1,4 +1,4 @@
-package com.cabbage.service.impl;
+package com.cabbage.service.Impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

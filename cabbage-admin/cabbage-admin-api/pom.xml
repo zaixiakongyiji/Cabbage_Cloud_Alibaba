@@ -27,12 +27,7 @@
             <artifactId>cabbage-common-core</artifactId>
         </dependency>
 
-        <!--feign 注解依赖-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-openfeign-core</artifactId>
-            <optional>true</optional>
-        </dependency>
+
 
         <dependency>
             <groupId>com.cabbage</groupId>
