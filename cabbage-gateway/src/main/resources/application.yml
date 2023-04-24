@@ -1,4 +1,22 @@
+server:
+  port: 8082
+configure:
+  jwt:
+    key: cabbage
+    ttl: 1800000
+    remember: 604800000
+  verify_code:
+    status: false
 spring:
-  profiles:
-    active: local
-
+  application:
+    name: cabbage-gateway
+  cloud:
+    nacos:
+      discovery:
+        serverAddr: ${NACOS_HOST:localhost}:${NACOS_PORT:8848}
+      config:
+        serverAddr: ${spring.cloud.nacos.discovery.server-addr}
+    config:
+      import:
+        - optional:nacos:application-@profiles.active@.yml
+        - optional:nacos:${spring.application.name}-@profiles.active@.yml

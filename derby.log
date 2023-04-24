@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Apr 24 15:06:06 CST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0187-b215-730d-000003e4c6d0 
+on database directory memory:D:\Work\IdeaWork\now\Cabbage_Cloud_Alibaba\7efaafaf-4b03-4075-bb2c-b97098d7b5a8 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@63947c6b 
+Loaded from file:/D:/maven-repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Eclipse Adoptium
+java.runtime.version=17.0.6+10
+user.dir=D:\Work\IdeaWork\now\Cabbage_Cloud_Alibaba
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

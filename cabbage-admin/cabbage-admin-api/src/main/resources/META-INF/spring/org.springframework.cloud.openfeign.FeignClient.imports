@@ -1,0 +1,10 @@
+com.cabbage.dubbo.FilterTypeService
+com.cabbage.dubbo.GatewayFilterService
+com.cabbage.dubbo.GatewayPredicateService
+com.cabbage.dubbo.GatewayRouteService
+com.cabbage.dubbo.PermissionSevice
+com.cabbage.dubbo.PredicateTypeService
+com.cabbage.dubbo.RoleService
+com.cabbage.dubbo.SysLogService
+com.cabbage.dubbo.SysOauthClientDetailsService
+com.cabbage.dubbo.UserService

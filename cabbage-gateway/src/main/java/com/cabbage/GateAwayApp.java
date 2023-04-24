@@ -16,8 +16,7 @@ import java.net.UnknownHostException;
 /**
  * Hello world!
  */
-@SpringBootApplication(scanBasePackages="com.cabbage")
-@EnableDubbo
+@SpringBootApplication
 @Slf4j
 @EnableDiscoveryClient
 public class GateAwayApp {
@@ -29,12 +28,12 @@ public class GateAwayApp {
                         "{} 启动成功!:\n\t" +
                         "本地地址: \thttp://localhost:{}\n\t" +
                         "外部地址: \thttp://{}:{}\n\t" +
-                        "文档地址: \thttp://{}:{}/doc.html#/home\n" +
+//                        "文档地址: \thttp://{}:{}/doc.html#/home\n" +
                         "----------------------------------------------------------",
-                env.getProperty("dubbo.application.name"),
+                env.getProperty("application.name"),
                 env.getProperty("server.port"),
-                InetAddress.getLocalHost().getHostAddress(),
-                env.getProperty("server.port"),
+//                InetAddress.getLocalHost().getHostAddress(),
+//                env.getProperty("server.port"),
                 InetAddress.getLocalHost().getHostAddress(),
                 env.getProperty("server.port"));
     }
