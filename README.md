@@ -4,16 +4,19 @@
 #### 介绍
 Spring Cloud Alibaba
 选型：
-注册中心 zookeeper 
+注册中心 nacos 
 网关 Gateway 
 中间件 rabbitMQ/ RocketMQ/Kafaka 
-分布事务 seata （未完成
+分布事务 seata 
 负载均衡 dubbo LB（未完成
 远程调用 dubbo PRC 
-服务熔断 sentinel （未完成
+服务熔断 sentinel 
 
 #### 软件架构
-软件架构说明
+1 nacos
+2 gateway
+3 auth
+4 admin
 
 
 #### 安装教程

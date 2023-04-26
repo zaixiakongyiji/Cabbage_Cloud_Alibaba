@@ -1,22 +1,18 @@
 server:
-  port: 8082
-configure:
-  jwt:
-    key: cabbage
-    ttl: 1800000
-    remember: 604800000
-  verify_code:
-    status: false
+  port: 9999
+
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
-    name: cabbage-gateway
+    name: @project.artifactId@
   cloud:
     nacos:
+
       discovery:
-        serverAddr: ${NACOS_HOST:localhost}:${NACOS_PORT:8848}
+        server-addr: ${NACOS_HOST:cabbage-register}:${NACOS_PORT:8848}
       config:
-        serverAddr: ${spring.cloud.nacos.discovery.server-addr}
-    config:
-      import:
-        - optional:nacos:application-@profiles.active@.yml
-        - optional:nacos:${spring.application.name}-@profiles.active@.yml
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+  config:
+    import:
+      - nacos:${spring.application.name}-@profiles.active@.yml

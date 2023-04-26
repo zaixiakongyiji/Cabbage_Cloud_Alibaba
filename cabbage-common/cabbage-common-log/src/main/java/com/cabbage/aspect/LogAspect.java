@@ -1,17 +1,27 @@
 package com.cabbage.aspect;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.cabbage.annotation.Log;
+import com.cabbage.dubbo.SysLogService;
+import com.cabbage.entity.SysLog;
 import com.cabbage.util.IpUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.DubboReference;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.DefaultParameterNameDiscoverer;
 import org.springframework.core.ParameterNameDiscoverer;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 
-import javax.annotation.Resource;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,8 +32,8 @@ import java.util.Map;
 public class LogAspect {
 
 
-    @Resource
-    SystemService service;
+    @DubboReference
+    SysLogService service;
 
 
 
@@ -88,7 +98,9 @@ public class LogAspect {
             return pjp.proceed();
         } finally {
 //            存数据库
-            service.insert(sysLog);
+            SysLog s=new SysLog();
+            BeanUtil.copyProperties(result,s);
+            service.save(s);
         }
 
         return result;

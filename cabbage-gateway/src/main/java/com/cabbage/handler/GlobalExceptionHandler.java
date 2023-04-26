@@ -16,7 +16,7 @@
 
 package com.cabbage.handler;
 
-import com.cabbage.dto.Result;
+import com.cabbage.util.Result;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

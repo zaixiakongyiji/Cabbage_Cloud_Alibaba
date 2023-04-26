@@ -179,20 +179,14 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot.version}</version>
-<!--                <exclusions>-->
-<!--&lt;!&ndash;                    &lt;!&ndash;排除tomcat依赖&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                    <exclusion>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <artifactId>spring-boot-starter-tomcat</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </exclusion>&ndash;&gt;-->
-<!--                </exclusions>-->
+                <exclusions>
+                    <!--排除tomcat依赖-->
+                    <exclusion>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                        <groupId>org.springframework.boot</groupId>
+                    </exclusion>
+                </exclusions>
             </dependency>
-
-<!--            <dependency>-->
-<!--                <groupId>io.grpc</groupId>-->
-<!--                <artifactId>grpc-netty</artifactId>-->
-<!--                <version>1.53.0</version>-->
-<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
     <dependencies>

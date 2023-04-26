@@ -1,6 +1,6 @@
 package com.cabbage.config;
 
-import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
+//import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -14,6 +14,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.scripting.support.ResourceScriptSource;
 
 @EnableCaching
@@ -24,8 +25,8 @@ public class RedisConfig {
     @Bean
     RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
-//        Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<>(Object.class);
-        FastJsonRedisSerializer serializer = new FastJsonRedisSerializer(Object.class);
+        Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<>(Object.class);
+//        FastJsonRedisSerializer serializer = new FastJsonRedisSerializer(Object.class);
         template.setHashKeySerializer(serializer);
         template.setKeySerializer(serializer);
         template.setHashValueSerializer(serializer);

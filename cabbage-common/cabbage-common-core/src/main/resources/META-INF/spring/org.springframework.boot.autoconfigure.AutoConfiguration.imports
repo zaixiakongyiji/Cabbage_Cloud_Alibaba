@@ -2,5 +2,5 @@ com.cabbage.config.TaskExecutorConfiguration
 com.cabbage.config.JacksonConfiguration
 com.cabbage.config.RedisConfig
 com.cabbage.config.RestTemplateConfiguration
-com.cabbage.util.SpringContextHolder
+#com.cabbage.util.SpringContextHolder
 com.cabbage.config.WebMvcConfiguration

@@ -16,17 +16,13 @@
 
 package com.alibaba.nacos.console.controller;
 
-import com.alibaba.nacos.common.model.RestResult;
-import com.alibaba.nacos.common.model.RestResultUtils;
 import com.alibaba.nacos.common.utils.VersionUtils;
 import com.alibaba.nacos.sys.env.EnvUtil;
-import com.alibaba.nacos.sys.utils.DiskUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,33 +34,21 @@ import java.util.Map;
 @RestController
 @RequestMapping("/v1/console/server")
 public class ServerStateController {
-    
-    private static final String ANNOUNCEMENT_FILE = "announcement.conf";
-    
-    /**
-     * Get server state of current server.
-     *
-     * @return state json.
-     */
-    @GetMapping("/state")
-    public ResponseEntity<Map<String, String>> serverState() {
-        Map<String, String> serverState = new HashMap<>(4);
-        serverState.put("standalone_mode",
-                EnvUtil.getStandaloneMode() ? EnvUtil.STANDALONE_MODE_ALONE : EnvUtil.STANDALONE_MODE_CLUSTER);
 
-        serverState.put("function_mode", EnvUtil.getFunctionMode());
-        serverState.put("version", VersionUtils.version);
+	/**
+	 * Get server state of current server.
+	 * @return state json.
+	 */
+	@GetMapping("/state")
+	public ResponseEntity<Map<String, String>> serverState() {
+		Map<String, String> serverState = new HashMap<>(4);
+		serverState.put("standalone_mode",
+				EnvUtil.getStandaloneMode() ? EnvUtil.STANDALONE_MODE_ALONE : EnvUtil.STANDALONE_MODE_CLUSTER);
 
-        return ResponseEntity.ok().body(serverState);
-    }
+		serverState.put("function_mode", EnvUtil.getFunctionMode());
+		serverState.put("version", VersionUtils.version);
 
-    @GetMapping("/announcement")
-    public RestResult<String> getAnnouncement() {
-        File announcementFile = new File(EnvUtil.getConfPath(), ANNOUNCEMENT_FILE);
-        String announcement = null;
-        if (announcementFile.exists() && announcementFile.isFile()) {
-            announcement = DiskUtils.readFile(announcementFile);
-        }
-        return RestResultUtils.success(announcement);
-    }
+		return ResponseEntity.ok().body(serverState);
+	}
+
 }

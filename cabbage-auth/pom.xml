@@ -36,13 +36,11 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-        <!--断路器依赖-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.pig4cloud</groupId>-->
-        <!--            <artifactId>pig-common-feign</artifactId>-->
-        <!--        </dependency>-->
-
-
+<!--        &lt;!&ndash;断路器依赖&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.cabbage</groupId>-->
+<!--            <artifactId>cabbage-common-feign</artifactId>-->
+<!--        </dependency>-->
 
         <!--api、model 模块-->
         <dependency>
@@ -69,11 +67,6 @@
         <dependency>
             <groupId>com.cabbage</groupId>
             <artifactId>cabbage-common-log</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.cabbage</groupId>
-            <artifactId>cabbage-common-mybatis</artifactId>
         </dependency>
 
         <dependency>

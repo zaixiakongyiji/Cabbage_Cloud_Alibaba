@@ -29,7 +29,7 @@
         <!--断路器依赖-->
         <!--        <dependency>-->
         <!--            <groupId>com.pig4cloud</groupId>-->
-        <!--            <artifactId>pig-common-feign</artifactId>-->
+        <!--            <artifactId>cabbage-common-feign</artifactId>-->
         <!--        </dependency>-->
 
 
