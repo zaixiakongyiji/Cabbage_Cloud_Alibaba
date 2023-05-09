@@ -16,8 +16,6 @@
 
 package com.cabbage.filter;
 
-import com.cabbage.constants.SecurityConstants;
-import com.cabbage.constants.WebConstants;
 import net.dreamlu.mica.core.spring.SpringContextUtil;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;

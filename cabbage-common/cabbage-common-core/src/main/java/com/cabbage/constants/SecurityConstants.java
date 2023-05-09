@@ -1,64 +1,130 @@
+/*
+ * Copyright (c) 2020 pig4cloud Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.cabbage.constants;
 
+/**
+ * @author lengleng
+ * @date 2019/2/1
+ */
 public interface SecurityConstants {
 
-    String[] DEFAULT_IGNORE_URLS = {"/actuator/**", "/error", "/v3/api-docs"};
+	/**
+	 * 角色前缀
+	 */
+	String ROLE = "ROLE_";
 
-    String USER_INFO="user_info";
+	/**
+	 * 前缀
+	 */
+	String PROJECT_PREFIX = "pig";
 
-    String PASSWORD="password";
+	/**
+	 * 项目的license
+	 */
+	String PROJECT_LICENSE = "https://pig4cloud.com";
 
-    String USERNAME="username";
+	/**
+	 * 内部
+	 */
+	String FROM_IN = "Y";
 
-    String ROLE = "ROLE_";
+	/**
+	 * 标志
+	 */
+	String FROM = "from";
 
-    String REDIRECT_URL="redirect_url";
+	/**
+	 * 请求header
+	 */
+	String HEADER_FROM_IN = FROM + "=" + FROM_IN;
 
-    String AUTHORIZATION_CODE_MODE_URL="/login/confirm_authorization";
+	/**
+	 * 默认登录URL
+	 */
+	String OAUTH_TOKEN_URL = "/oauth2/token";
 
-    String ASE="AES";
+	/**
+	 * grant_type
+	 */
+	String REFRESH_TOKEN = "refresh_token";
 
-    String OAUTH_LOGIN_URL="/oauth2/login";
+	/**
+	 * 手机号登录
+	 */
+	String APP = "app";
 
-    String REFRESH_TOKEN = "refresh_token";
+	/**
+	 * {bcrypt} 加密的特征码
+	 */
+	String BCRYPT = "{bcrypt}";
 
-    String ACCESS_TOKEN = "access_token";
+	/**
+	 * {noop} 加密的特征码
+	 */
+	String NOOP = "{noop}";
 
-    String CODE_LENGTH = "6";
+	/***
+	 * 资源服务器默认bean名称
+	 */
+	String RESOURCE_SERVER_CONFIGURER = "resourceServerConfigurerAdapter";
 
-    String DEFAULT_CODE_KEY = "DEFAULT_CODE_KEY:";
-    String SMS_PARAMETER_NAME = "phone";
+	/**
+	 * 用户名
+	 */
+	String USERNAME = "username";
 
-    String PROJECT_OAUTH_ACCESS = "token::access_token";
+	/**
+	 * 用户信息
+	 */
+	String DETAILS_USER = "user_info";
 
-    String PROJECT_OAUTH_TOKEN = "cabbage_oauth:token:";
+	/**
+	 * 协议字段
+	 */
+	String DETAILS_LICENSE = "license";
 
-    /**
-     * 菜单信息缓存
-     */
-    String MENU_DETAILS = "menu_details";
+	/**
+	 * 验证码有效期,默认 60秒
+	 */
+	long CODE_TIME = 60;
 
-    /**
-     * 用户信息缓存
-     */
-    String USER_DETAILS = "user_details";
+	/**
+	 * 验证码长度
+	 */
+	String CODE_SIZE = "6";
 
-    /**
-     * 字典信息缓存
-     */
-    String DICT_DETAILS = "dict_details";
+	/**
+	 * 客户端模式
+	 */
+	String CLIENT_CREDENTIALS = "client_credentials";
 
-    /**
-     * oauth 客户端信息
-     */
-    String CLIENT_DETAILS_KEY = "client:details";
+	/**
+	 * 客户端ID
+	 */
+	String CLIENT_ID = "clientId";
 
-    /**
-     * 参数缓存
-     */
-    String PARAMS_DETAILS = "params_details";
+	/**
+	 * 短信登录 参数名称
+	 */
+	String SMS_PARAMETER_NAME = "phone";
 
-
-    long CODE_TIME = 60;
+	/**
+	 * 授权码模式confirm
+	 */
+	String CUSTOM_CONSENT_PAGE_URI = "/token/confirm_access";
 
 }

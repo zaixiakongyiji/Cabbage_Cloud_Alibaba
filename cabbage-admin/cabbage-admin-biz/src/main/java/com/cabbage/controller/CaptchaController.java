@@ -2,8 +2,8 @@ package com.cabbage.controller;
 
 import cn.hutool.core.lang.UUID;
 //import com.cabbage.core.domain.dto.Captcha;
-import com.cabbage.core.domain.dto.CaptchaConfig;
-import com.cabbage.core.domain.dto.RedisPrefix;
+import com.cabbage.dto.CaptchaConfig;
+import com.cabbage.dto.RedisPrefix;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import jakarta.servlet.http.HttpServletRequest;

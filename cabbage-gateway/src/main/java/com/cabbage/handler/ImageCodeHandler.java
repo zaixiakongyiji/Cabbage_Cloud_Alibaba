@@ -16,7 +16,6 @@
 
 package com.cabbage.handler;
 
-import com.cabbage.constants.SecurityConstants;
 import com.pig4cloud.captcha.ArithmeticCaptcha;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

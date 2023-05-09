@@ -3,8 +3,13 @@ package com.cabbage.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -18,47 +23,80 @@ public class SysLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id", type = IdType.AUTO)
-    @ApiModelProperty(value = "id")
-    private Integer id;
+    /**
+     * 编号
+     */
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @Schema(description = "日志编号")
+    @JsonSerialize(using = ToStringSerializer.class)
+    private Long id;
 
-    @ApiModelProperty(value = "模块名称")
-    private String moduleName;
+    /**
+     * 日志类型
+     */
+    @NotBlank(message = "日志类型不能为空")
+    @Schema(description = "日志类型")
+    private String type;
 
-    @ApiModelProperty(value = "IP地址")
-    private String ip;
+    /**
+     * 日志标题
+     */
+    @NotBlank(message = "日志标题不能为空")
+    @Schema(description = "日志标题")
+    private String title;
 
-    @ApiModelProperty(value = "类名")
-    private String className;
+    /**
+     * 操作IP地址
+     */
+    @Schema(description = "操作ip地址")
+    private String remoteAddr;
 
-    @ApiModelProperty(value = "请求url")
-    private String requestUrl;
+    /**
+     * 用户浏览器
+     */
+    @Schema(description = "用户代理")
+    private String userAgent;
 
-    @ApiModelProperty(value = "请求方式，POST、GET")
-    private String requestMethod;
+    /**
+     * 请求URI
+     */
+    @Schema(description = "请求uri")
+    private String requestUri;
 
-    @ApiModelProperty(value = "请求参数")
-    private String requestParam;
+    /**
+     * 操作方式
+     */
+    @Schema(description = "操作方式")
+    private String method;
 
-    @ApiModelProperty(value = "接口状态（0成功 1失败）")
-    private Integer status;
+    /**
+     * 操作提交的数据
+     */
+    @Schema(description = "数据")
+    private String params;
 
-    @ApiModelProperty(value = "错误信息")
-    private String errorText;
+    /**
+     * 执行时间
+     */
+    @Schema(description = "方法执行时间")
+    private Long time;
 
-    @ApiModelProperty(value = "耗时,毫秒")
-    private String takeUpTime;
+    /**
+     * 异常信息
+     */
+    @Schema(description = "异常信息")
+    private String exception;
 
-    @TableField("CREATED_BY")
-    @ApiModelProperty(value = "创建人")
-    private Integer createdBy;
+    /**
+     * 服务ID
+     */
+    @Schema(description = "应用标识")
+    private String serviceId;
 
-    @TableField("CREATED_BY_NAME")
-    @ApiModelProperty(value = "创建人名")
-    private String createdByName;
-
-
-    @TableField("CREATED_TIME")
-    @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createdTime;
+    /**
+     * 删除标记
+     */
+    @TableLogic
+    
+    private String delFlag;
 }

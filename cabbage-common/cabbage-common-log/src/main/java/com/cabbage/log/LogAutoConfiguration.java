@@ -16,9 +16,7 @@
 
 package com.cabbage.log;
 
-import com.cabbage.log.aspect.SysLogAspect;
-import com.cabbage.log.event.SysLogListener;
-import com.pig4cloud.pig.admin.api.feign.RemoteLogService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;

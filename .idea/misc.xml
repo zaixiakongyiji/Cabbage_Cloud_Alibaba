@@ -10,6 +10,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/cabbage-common/cabbage-common-log/pom.xml" />
         <option value="$PROJECT_DIR$/cabbage-common/cabbage-common-mq/pom.xml" />
       </set>
     </option>

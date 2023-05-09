@@ -20,8 +20,6 @@ import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.cabbage.config.GatewayConfigProperties;
-import com.cabbage.constants.SecurityConstants;
-import com.cabbage.constants.WebConstants;
 import com.cabbage.util.Result;
 import com.cabbage.util.WebUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
